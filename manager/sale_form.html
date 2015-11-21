@@ -1,0 +1,27 @@
+{{extend 'layout.html'}}
+<h2>Input form</h2>
+<form enctype="multipart/form-data"
+      action="{{=URL('manager', 'insert_sale', request.vars)}}" method="post">
+
+<table>
+    <tr>
+        <th>Item No</th>
+        <th>Quantity</th>
+        <th>Discount</th>
+    </tr>
+    {{for row in rows2:}} 
+     <tr> 
+       <td><input name="item_no" value="{{=row.stock.item_item_no}}" disabled/></td>
+        <td><input name="quantity" type="number" max="{{=row._extra['SUM(stock.quantity)']}}"/></td>
+        <td><input name="discount" /></td>
+     </tr>
+    {{pass}}
+    <tr>
+        <td></td>
+        <td><input type="submit" /></td>
+         <td></td>   
+    </tr>
+        
+</table>
+        
+</form>
