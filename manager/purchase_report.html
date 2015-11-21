@@ -1,0 +1,40 @@
+{{extend 'layout.html'}}
+{{total_quantity=0}}
+{{total_sp=0}}
+{{total_cp=0}}
+<table class="table_style" margin-left="200px">
+    <tr><th colspan="2"></th><th colspan="3">PURCHASE REPORT</th><th colspan="3"></th></tr>   
+    <tr><th colspan="2"></th><th colspan="3"><i>DATE {{=day}}</i></th><th colspan="3"></th></tr>
+    <tr>
+        <th> PURCHASE NO </th>
+        <th width="20px"></th>
+        <th> QUANTITY</th>
+         <th width="20px"></th>       
+        <th>COST PRICE</th>
+         <th width="20px"></th>
+       
+        <th> SELLING PRICE</th>
+         <th width="20px"></th>
+    </tr>
+ 	{{for row in L:}}
+     {{total_quantity = total_quantity + row.quantity}}
+      {{total_sp = total_sp + row.selling_price}}
+    {{total_cp = total_cp + row.cost_price}}
+   
+	<tr>
+   	    <td> {{=row.purchase_no}}</td> 
+       <td width="20px"></td>
+        <td> {{=row.quantity}} </td>
+         <td width="20px"></td>       
+        <td> {{=row.cost_price}} </td>
+         <td width="20px"></td>       
+        <td> {{=row.selling_price}} </td>
+        <td width="20px"></td>
+	</tr>
+    {{pass}}
+     <tr><th colspan="2"></th><th colspan="3">TOTALS</th><th colspan="3"></th></tr>   
+    <tr><td> TOTAL QUANTITY</td><td colspan="2" width="20px"></td><td>{{=total_quantity}}</td></tr>
+    	 <tr><td> TOTAL COST PRICE</td><td colspan="2" width="20px"></td><td>{{=total_cp}}</td></tr>
+     <tr><td> TOTAL SELLING PRICE</td><td colspan="2" width="20px"></td><td>{{=total_sp}}</td></tr>
+    
+	</table>
