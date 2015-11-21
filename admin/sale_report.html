@@ -1,0 +1,27 @@
+{{extend 'layout.html'}}
+<table class="table_style" margin-left="200px">
+    <tr><th colspan="2"></th><th colspan="3"><i>DATE {{=day}}</i></th><th colspan="2"></th></tr>
+    <tr>
+        <th> BILL NO </th>
+        <th width="20px"></th>
+        <th> QUANTITY</th>
+         <th width="20px"></th>       
+        <th>COST PRICE</th>
+         <th width="20px"></th>
+       
+        <th> SELLING PRICE</th>
+    </tr>
+ 	{{for row in L:}}
+	<tr>
+   	    <td> {{=row.bill_no}}</td> 
+        <td></td>
+        <td> {{=row.quantity}} </td>
+         <td width="20px"></td>
+       
+        <td> {{=row.cost_price}} </td>
+         <td width="20px"></td>
+       
+        <td> {{=row.selling_price}} </td>
+	</tr>
+    	{{pass}}
+	</table>
