@@ -1,0 +1,35 @@
+{{extend 'layout.html'}}
+{{total_quantity=0}}
+{{total_sp=0}}
+{{total_fp=0}}
+{{disc_amt=0}}
+<table class="table_style" margin-left="200px">
+     <tr> <th colspan="2"></th> <th colspan="2"> BILL NO - {{=bil}} </th><th></th><th></th></tr>
+   
+    {{for row in rows:}}
+     <tr><td width="50px"></td><td>ITEM NOs </td><td width="50px"></td> <td> {{=row.item_item_no}}</td></tr>
+     {{pass}}
+     {{for row in rows:}}
+     <tr><td width="50px"></td><td>QUANTITY </td><td width="50px"></td> <td> {{=row.quantity}}</td></tr>
+     {{total_quantity = total_quantity + row.quantity}}
+     {{pass}}
+     {{for row in rows:}}
+    <tr><td width="50px"></td><td>SELLING PRICE</td><td width="50px"></td><td>{{=row.selling_price}}</td></tr>
+    {{total_sp = total_sp + row.selling_price}}
+      {{pass}}
+     {{for row in rows:}}
+    <tr><td width="50px"></td><td>DISCOUNT</td><td width="50px"></td><td>{{=row.discount}}</td></tr>
+     {{pass}}
+     {{for row in rows:}}
+    <tr><td width="50px"></td><td>FINAL PRICE</td><td width="50px"></td><td>{{=row.final_price}}</td></tr>
+    {{total_fp = total_fp + row.final_price}}
+    	 {{pass}}
+ <tr><th width="50px"></th><th></th><th width="50px">TOTALS</th><th></th></tr>
+   
+      <tr><td width="50px"></td><td>Total Quantity</td><td width="50px"></td><td>{{=total_quantity}}</td></tr>
+    <tr><td width="50px"></td><td>Total Selling Price</td><td width="50px"></td><td>{{=total_sp}}</td></tr>
+    <tr><td width="50px"></td><td>Total Final Price</td><td width="50px"></td><td>{{=total_fp}}</td></tr>     
+    {{disc_amt = total_sp - total_fp}}
+    <tr><td width="50px"></td><td>Total Discount</td><td width="50px"></td><td>{{=disc_amt}}</td></tr>
+   
+	</table>
