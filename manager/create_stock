@@ -1,0 +1,5 @@
+{{extend 'layout.html'}}
+<h1>
+    <u>STOCK SUCCESSFULLY CREATED</u>
+</h1>
+<br/>
