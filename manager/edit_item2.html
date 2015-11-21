@@ -1,0 +1,21 @@
+{{extend 'layout.html'}}
+<h1>
+    UPDATED RECORD
+</h1>
+<br/>
+<table class="table_style" margin-left="200px">
+    <tr>
+        <th>
+            ITEM NO
+        </th>
+        <th width="100px"></th>
+        <th> ITEM NAME</th>
+    </tr>
+ 	{{for row in rows:}}
+	<tr>
+   	<td> {{=row.item_no}} </td>
+        <td></td>
+    <td> {{=row.item_name}}</td>   
+	</tr>
+    	{{pass}}
+	</table>
