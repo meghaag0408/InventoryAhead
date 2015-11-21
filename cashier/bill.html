@@ -1,0 +1,24 @@
+{{extend 'layout.html'}}
+<form enctype="multipart/form-data"
+      action="{{=URL('cashier', 'generate_bill', request.vars)}}" method="post">
+    <table>
+        <tr> 
+        <th> BILL NOs</th>
+         <th width="50px"></th>
+        <th>  
+            <select name="bill_no">
+            {{for row in rows:}}
+                      <option value="{{=row.bill_no}}" length="100">{{=row.bill_no}}</option>
+              
+            {{pass}}
+                  </select>
+        </th>
+            <th width="50px"></th>
+        <td> </td>
+        <td> </td>
+        <td><input type="submit" value="GENERATE BILL" /></td>
+        
+	</tr>
+    	{{pass}}
+	</table>
+</form>
