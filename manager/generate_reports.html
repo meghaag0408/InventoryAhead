@@ -1,0 +1,27 @@
+{{extend 'layout.html'}}
+
+{{extend 'layout.html'}}
+<h2>Update Information</h2>
+<br/>
+<form enctype="multipart/form-data"
+      action="{{=URL('manager', 'print_salereport', request.vars)}}" method="post">
+
+<table>
+    <tr>
+        <th>Item Id</th>
+    </tr>
+    {{for row in rows2:}} 
+     <tr> 
+        <td> {{=row.id}} </td>
+       <td><input name="item_no" value="{{=row.item_no}}"/></td>
+       <td><input name="item_name" value="{{=row.item_name}}"/></td>
+     </tr>
+    {{pass}}
+    <tr>
+        <td></td>
+         <td><input type="submit" value="UPDATE"/></td>
+       </tr>
+        
+</table>
+        
+</form>
