@@ -1,0 +1,23 @@
+{{extend 'layout.html'}}
+<form enctype="multipart/form-data"
+      action="{{=URL('manager', 'purchase_report', request.vars)}}" method="post">
+   <table>
+        <tr> 
+        <th> Enter Date:</th>
+         <th width="10px"></th>
+        <td>  
+              <select name="date">
+            {{for row in L:}}
+                      <option value="{{=row}}" length="100">{{=row}}</option>
+            {{pass}}
+                  </select>
+        </td>
+            <th width="10px"></th>
+        <td> </td>
+        <td> </td>
+        <td><input type='submit' value="REPORT" name='purchase'/></td>
+        
+	</tr>
+    	{{pass}}
+	</table>
+</form>
