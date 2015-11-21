@@ -1,0 +1,69 @@
+{{extend 'layout.html'}}
+{{total_quantity=0}}
+{{total_sp=0}}
+{{total_cp=0}}
+{{total_fp=0}}
+{{total_loss=0}}
+{{total_discount=0}}
+{{total_profit=0}}
+<table class="table_style" margin-left="200px">
+    <tr><th colspan="7"></th><th colspan="6">PURCHASE REPORT</th><th colspan="6"></th></tr>   
+    <tr><th colspan="7"></th><th colspan="6"><i>DATE {{=day}}</i></th><th colspan="6"></th></tr>
+    <tr>
+        <th colspan="2"> BILL NO </th>
+        <th width="20px"></th>  
+        <th> QUANTITY</th>
+         <th width="20px"></th>       
+        <th>COST PRICE</th>
+         <th width="20px"></th>       
+        <th> SELLING PRICE</th>
+         <th width="20px"></th>
+        <th> DISCOUNT </th>
+        <th width="20px"></th>
+        <th> FINAL PRICE </th>
+         <th width="20px"></th>       
+        <th>PROFIT</th>
+         <th width="20px"></th>       
+        <th> LOSS</th>
+         <th width="20px"></th>
+
+    </tr>
+ 	{{for row in L:}}
+     {{total_quantity = total_quantity + row.quantity}}
+      {{total_sp = total_sp + row.selling_price}}
+    {{total_cp = total_cp + row.cost_price}}     
+    {{total_fp = total_fp + row.final_price}}
+    {{total_profit = total_profit + row.profit}}
+         {{total_discount = total_discount + row.discount}}
+    {{total_loss = total_loss + row.loss}}
+    
+   
+	<tr>
+   	    <td colspan="2"> {{=row.bill_no}}</td> 
+         <td width="20px"></td>
+        <td> {{=row.quantity}} </td>
+         <td width="20px"></td>       
+        <td> {{=row.cost_price}} </td>
+         <td width="20px"></td>       
+        <td> {{=row.selling_price}} </td>
+        <td width="20px"></td>
+        <td> {{=row.discount}} </td>
+         <td width="20px"></td>       
+        <td> {{=row.final_price}} </td>
+        <td width="20px"></td>
+         <td> {{=row.profit}} </td>
+         <td width="20px"></td>       
+        <td> {{=row.loss}} </td>
+        <td width="20px"></td>
+	</tr>
+    {{pass}}
+     <tr><th colspan="7"></th><th colspan="6">TOTALS</th><th colspan="6"></th></tr>   
+    <tr>  <td width="20px"></td><td colspan="3"> Total Quantity</td><td colspan="7" width="20px"></td><td>{{=total_quantity}}</td></tr>
+    	 <tr>  <td width="20px"></td><td colspan="3">  Total Cost Price</td><td colspan="7" width="20px"></td><td>{{=total_cp}}</td></tr>
+     <tr>  <td width="20px"></td><td colspan="3"> Total Selling Price</td><td colspan="7" width="20px"></td><td>{{=total_sp}}</td></tr>
+      <tr>  <td width="20px"></td><td colspan="3"> Total Discount</td><td colspan="7" width="20px"></td><td>{{=total_discount}}%</td></tr>
+    	 <tr>  <td width="20px"></td><td colspan="3"> Total Final Price</td><td colspan="7" width="20px"></td><td>{{=total_fp}}</td></tr>
+     <tr>  <td width="20px"></td><td colspan="3">Total Profit</td><td colspan="7" width="20px"></td><td>{{=total_profit}}%</td></tr>
+    <tr>  <td width="20px"></td><td colspan="3">Total Loss</td><td colspan="7" width="20px"></td><td>{{=total_loss}}%</td></tr>
+    
+	</table>
