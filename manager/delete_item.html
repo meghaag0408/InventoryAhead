@@ -1,0 +1,24 @@
+{{extend 'layout.html'}}
+<form enctype="multipart/form-data"
+      action="{{=URL('manager', 'delete_item2', request.vars)}}" method="post">
+    <table>
+        <tr> 
+        <th> ITEM NOs</th>
+         <th width="10px"></th>
+        <td>  
+            <select name="item_no">
+            {{for row in rows:}}
+                      <option value="{{=row.item_no}}" length="100">{{=row.item_no}}</option>
+              
+            {{pass}}
+                  </select>
+        </td>
+            <th width="10px"></th>
+        <td> </td>
+        <td> </td>
+        <td><input type="submit" value="DELETE" /></td>
+        
+	</tr>
+    	{{pass}}
+	</table>
+</form>
