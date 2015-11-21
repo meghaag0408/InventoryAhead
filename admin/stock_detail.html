@@ -1,0 +1,23 @@
+{{extend 'layout.html'}}
+{{=A('NEW STOCK', _class='alignbutton', _href=(URL('create_stock')))}}
+<br/>
+<br/>
+
+<table class="table_style">
+    <tr>
+        <th> STOCK NO </th>
+        <th> PURCHASE NO</th>
+         <th> ITEM NO</th>
+        <th> QUNATITY</th>
+        <th> STOCKED ON</th>
+    </tr>
+ 	{{for row in rows:}}
+	<tr>
+   	<td> {{=row.stock_no}} </td>
+    <td> {{=row.purchase_no}} </td>
+     <td> {{=row.item_item_no}} </td>    
+    <td> {{=row.quantity}}</td>
+    <td> {{=row.stocked_on}}</td>
+	</tr>
+    	{{pass}}
+	</table>
