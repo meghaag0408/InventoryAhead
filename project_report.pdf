@@ -1,0 +1,126 @@
+
+
+
+PROJECT REPORT
+ON
+INVENTORY MANAGEMENT SYSTEM
+
+Project Mentor:	    					Project Members:                            
+Atul Sinha							     Megha Agarwal (201506511)
+								              Esha Yadav (201505561)
+	    							         M.Tech- IIIT Hyderabad
+
+_____________________________________________________________________________________
+TABLE OF CONTENTS
+
+1. Introduction
+1.1 BRIEF DESCR	IPTION
+
+2. Overall Description
+2.1 Product Perspective
+2.1.1 Features Implemented
+2.1.2 Future Enhancements
+______________________________________________________________________________________
+
+INTRODUCTION
+
+1.1 System Introduction
+
+
+
+Inventory Ahead is a project in web2py framework that manages and control the inventory of the store. 
+
+The portal helps to automate and maintain the records on the basis of quantity,value etc.of a store that sells items like laptops, desktops etc. 
+
+The calculations are made very quickly and the records are directly saved into databases and the databases can be maintained for a longer period of time. 
+
+Each record can be retrieved and can be verified for the future transactions. Reports are also generated on the daily basis to keep track of the trasactions.
+
+This system also provides high level of security as only admin people have the full access to the database. 
+
+There are operator logins for cashier and manager through which operator can manage purchases and sales of the inventory. Limited access is available to the 	operators.
+
+_______________________________________________________________________________________________________________________
+OVERALL DESCRIPTION
+
+2.1 Product Perspective
+
+2.1. 1 Features Implemented
+
+There are 3 types of login/actors:
+ADMIN
+MANAGER
+CASHIER
+
+MANAGER
+Name : Megha Agarwal
+Login : agar.megha@gmail.com
+Password : zenith2015
+
+Manager Menu bar :
+HOME	ITEMS	STOCK	PURCHASE 	SALE 	REPORTS
+
+ITEMS 
+Items menu bar has three main functions:
+Show items : Items that the store sells
+Edit : Item information that is to be edited can be done through this button
+Delete : Items to be deleted
+
+STOCK
+Stock Presents : Current stock supplies
+NEW STOCK BUTTON : Add the stocks to that have been delivered after the purchase. i.e Adds the stock to the stock table of all those items whose delivery date is less than the current date.
+
+PURCHASE
+Helps the manager to record the quantity ,price and other details of the items whose order have been placed.
+The corresponding entries are updated in the purchase table.
+
+SALE
+Presents an interface for the manager to update on the items that have been sold. It gives two input i.e. No of quantity of each item and discount(if) against each item. A unique bill no is generated with the current date, with all the entries entered in the current sale form.
+
+REPORTS
+
+PURCHASE REPORT : 
+Generates purchase report. The purchase report contains items and all its details(quantity, selling price, and cost price) that have been bought by the store on the particular date that is selected from the drop down menu.
+
+
+SALE REPORT: 
+Generates sale report. The sale report contains items and all its details(quantity, selling price, and cost price, final price, discount, profit, loss) that have been sold by the store on the particular date that is selected from the drop down menu.
+
+CASHIER
+
+NAME : Esha Yadav
+LOGIN : esha.yadav@gmail.com
+PASSWORD : esha123
+
+Cashier menu bar:
+HOME	ITEMS	SALE 	GENERATE BILL
+
+ITEMS
+Displays items that the store keeps
+
+SALE
+Again presents an interface for the cashier to update on the items that have been sold. It gives two input i.e. No of quantity of each item and discount(if) against each item. A unique bill no is generated with the current date, with all the entries entered in the current sale form.
+
+GENERATE BILL:
+Generates a bill according to the bill number entered by the cashier. Presents the information of transactions on that bill.
+
+ADMIN
+Name: Atul Sinha
+LOGIN : atul.sinha@gmail.com
+PASSWORD : atul123
+
+Admin has full control over all the functionalities mentioned above and also has the power to add users through the add user button.
+
+It can also manage users, by clicking on manage user button. It can assign the membership to the current/new users as per his choice.
+
+Project link for python anywhere.com :
+ESHAYADAV.pythonanywhere.com/inventoryahead 
+
+_______________________________________________________________________________________________________________________
+2.1. 2 Future Enhancements
+
+A separate search can be made one the basis of what items are current presently in the stock. 
+Though, the items currrently present in the stock are only made available for sale. 
+
+
+________________________________________________________________________________________________________________
